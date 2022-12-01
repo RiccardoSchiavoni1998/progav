@@ -83,6 +83,8 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
     • Funzioni admin
         • Ricaricare i token dell'utente
 
+![Casi d'uso](/imgReadme/casiduso.jpeg)
+
 ## Utilizzo Pattern e organizzazione del codice
     La classi del codice sono state organizzate secondo la logica del pattern MVC abbinata all'utilizzo dei middlewares.
     Ogni richiesta degli utenti autenticati viene prima validata dalle funzioni dei due middleware (GameMiddleware e UserMiddleware),
@@ -111,6 +113,7 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
         •GameModifier: contiene tutti i metodi per validare ed effettuare le modifiche sullo stato di una partita esistente.
         •Cpu: classe atratta da cui ereditano la classe Ia e la classe Bot, queste implementano i metodi della classe cpu.
         •MoveMaker: classe che invoca, a seconda della tipologia della partita, la classe Ia o la classe Bot.
+
 ## Token JWT
     Ogni utente che effettua una richiesta deve essere validato tramite jwt (json web token), di seguito un esempio di token:
 
@@ -161,6 +164,8 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
         • ritorna uno storico mosse vuoto e lo stato iniziale della partita.
     
     Infine viene creato il modello e viene scalata all'utente la quantità di token prestabiliti.
+    
+    ![Creazione](/imgReadme/create.jpeg)
 
 
 • /modifyGame
@@ -188,10 +193,9 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
         • Nel caso in cui l'utente abbia colpito tutte le celle dell'avversario lo stato della partita viene cambiato a 'game over'.
     
     L'elemento nel database viene aggiornato e viene scalata all'utente la quantità di token prestabiliti. 
-
-
-    
     Infine viene creato il modello e viene scalata all'utente la quantità di token prefissati.
+    
+    ![Modifica](/imgReadme/modify.jpeg)
 
 • /cpu
 
@@ -218,7 +222,9 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
                     -nel caso in cui lo storico filtrato contenga solo un elemento 'colpito' si seleziona una delle celle adiacenti.
                     -nel caso in cui lo storico filtrato  piu di un elemento 'colpito' si seleziona una delle celle adiacenti
                     (cercando di capire la disposizione della barchetta).
-
+     
+     ![Cpu](/imgReadme/cpu.jpeg)
+     
 • /stopGame
 
     Terminazione di una partita esistente, il corpo della richiesta associata a questa richiesta dovrà contenere i seguenti campi:
@@ -239,6 +245,8 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
         • L'elemento nel database viene aggiornato e viene scalata all'utente la quantità di token prestabiliti. 
     
     L'elemento nel database viene aggiornato e viene scalata all'utente la quantità di token prestabiliti. 
+    
+    ![Stop](/imgReadme/cpu.jpeg)
 
 • /getMatchInfo , /getMatchHistory , /getShips
 
@@ -253,7 +261,7 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
         • La classe GameMiddleware controlla se l'utente che effettua la richiesta è uno dei due giocatori.
         • Vengono restituite le informazioni richieste
 
-
+    ![get](/imgReadme/get.jpeg)
 • /rechargeToken
 
     Funzionalità utilizzata dall'admin per ricarica i token degli utenti di livello 0
@@ -268,7 +276,7 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
         • La classe UserMiddleware controlla il ricevente esiste.
         • I token vengono aggiunti alla quantità già posseduta.
 
-
+    ![Recharge Token](/imgReadme/adnim.jpeg)
 
 ## RDBMS
 Per quanto riguarda la classe che realizza la connessione con la base dati dove sono memorizzati gli utenti,
