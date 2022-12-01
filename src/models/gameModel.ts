@@ -34,7 +34,6 @@ export const Game = sequelize.define('games', {
 });
 
 export async function newGame(typology:string, playerA: string, playerB: string, info:string, statePlayerA:string, statePlayerB:string){
-    console.log("6.1 CREO GAME");
     return await Game.create({
         typology: typology,
         playera: playerA,
