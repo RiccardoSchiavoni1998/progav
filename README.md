@@ -165,7 +165,7 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
     
     Infine viene creato il modello e viene scalata all'utente la quantità di token prestabiliti.
     
-    ![Creazione](/imgReadme/create.jpeg)
+   ![Creazione](/imgReadme/create.jpeg)
 
 
 • /modifyGame
@@ -195,7 +195,7 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
     L'elemento nel database viene aggiornato e viene scalata all'utente la quantità di token prestabiliti. 
     Infine viene creato il modello e viene scalata all'utente la quantità di token prefissati.
     
-    ![Modifica](/imgReadme/modify.jpeg)
+   ![Modifica](/imgReadme/modify.jpeg)
 
 • /cpu
 
@@ -223,7 +223,7 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
                     -nel caso in cui lo storico filtrato  piu di un elemento 'colpito' si seleziona una delle celle adiacenti
                     (cercando di capire la disposizione della barchetta).
      
-     ![Cpu](/imgReadme/cpu.jpeg)
+   ![Cpu](/imgReadme/cpu.jpeg)
      
 • /stopGame
 
@@ -261,7 +261,8 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
         • La classe GameMiddleware controlla se l'utente che effettua la richiesta è uno dei due giocatori.
         • Vengono restituite le informazioni richieste
 
-    ![get](/imgReadme/get.jpeg)
+  ![Info Match](/imgReadme/get.jpeg)
+  
 • /rechargeToken
 
     Funzionalità utilizzata dall'admin per ricarica i token degli utenti di livello 0
@@ -276,7 +277,7 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
         • La classe UserMiddleware controlla il ricevente esiste.
         • I token vengono aggiunti alla quantità già posseduta.
 
-    ![Recharge Token](/imgReadme/adnim.jpeg)
+   ![Ricarica Token](/imgReadme/adnim.jpeg)
 
 ## RDBMS
 Per quanto riguarda la classe che realizza la connessione con la base dati dove sono memorizzati gli utenti,
