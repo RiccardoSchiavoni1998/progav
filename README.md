@@ -246,7 +246,7 @@ La chiave privata da usare lato back-end deve essere memorizzata un file .env e 
     
     L'elemento nel database viene aggiornato e viene scalata all'utente la quantità di token prestabiliti. 
     
-    ![Stop](/imgReadme/cpu.jpeg)
+  ![Stop](/imgReadme/cpu.jpeg)
 
 • /getMatchInfo , /getMatchHistory , /getShips
 
