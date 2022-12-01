@@ -73,18 +73,15 @@ export async function checkNewMatchFormatRequest (req: any, res: any, next: any)
  */
 
 export async function checkNewMatchContentRequest(req: any, res: any, next: any){
-  console.log("eccomiiii")
   if(req.body.typology == "UvBOT") req.body.player = "BOT";
   else if (req.body.typology == "UvIA") req.body.player = "IA";
   if(
     checkMatchTypology(req.body.typology) &&
     checkTableDimension(req.body.dimension) &&
     checkShipsDefinition(req.body.dimension, req.body.shipsamount) && (req.user.email!==req.body.player)){
-      console.log("soy qui")
       req.body.neededTokenAmount = 0.4;
       next();
   } else {
-    console.log('no soy qui')
     res.status(400).send('Errore nella richiesta');
   }
 }
