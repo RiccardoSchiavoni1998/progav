@@ -60,8 +60,9 @@ class Ia extends Cpu {
         else if(hitcell.length == 1){//caso in cui trovo solo una cella hit
             let neighbors = [] //creo un vettore contentente le cellule adicenti, filtrando quelle già colpite e controllando che le cellule adiadcenti non 'eccedano'
             neighbors = [cpufuns.moveleft(hitcell[0], dim), cpufuns.moveright(hitcell[0], dim), cpufuns.moveup(hitcell[0], dim), cpufuns.movedown(hitcell[0], dim)]
-                    .filter((elem:any)=> !this.history.filter((cell:any) => cell =cell.outcome).includes(elem)) //filtra colpite
+                    .filter((elem:any)=> !misscell.includes(elem)) //filtra mancate
                     .filter((elem:any)=> !(cpufuns.checkmoveup(elem, dim) || cpufuns.checkmovedown(elem, dim) || cpufuns.checkmoveright(elem, dim) || cpufuns.checkmoveleft(elem, dim)))
+                    .filter((elem:any)=>setMoves.includes(elem))//filtra colpite
             let cell = neighbors[Math.floor(Math.random()*neighbors.length)];
             return {'cell': cell, 'outcome': 'miss'};
         }else if (hitcell.length>1){//caso in cui trovo piu celle hit
@@ -80,11 +81,13 @@ class Ia extends Cpu {
                 neighbors = [cpufuns.moveleft(hitcell[0], dim), cpufuns.moveright(hitcell[hitcell.length-1], dim)]
                 .filter((elem)=> !misscell.includes(elem))
                 .filter((elem)=>!(cpufuns.checkmoveleft(elem, dim)||cpufuns.checkmoveright(elem, dim)))
+                .filter((elem:any)=>setMoves.includes(elem))
             }
             else if(goDown){
                 neighbors = [cpufuns.moveup(hitcell[0], dim), cpufuns.movedown(hitcell[hitcell.length-1], dim)]
                 .filter((elem)=> !misscell.includes(elem))
                 .filter((elem)=>!(cpufuns.checkmoveup(elem, dim)||cpufuns.checkmovedown(elem, dim)))
+                .filter((elem:any)=>setMoves.includes(elem))
             }
             if(neighbors.length>0){
                 let cell = neighbors[Math.floor(Math.random()*neighbors.length)]
@@ -121,7 +124,6 @@ class BotWorkFlow implements CpuWorkFlow{
 export class MoveMaker{
     public move(dimension:number, cpu:string, history:string):any{
         if(cpu=="IA"){
-            console.log("SI")
             var iaWorkFlow = new IaWorkFlow();
             return iaWorkFlow.moveMaker(dimension, history);
         }
@@ -130,5 +132,4 @@ export class MoveMaker{
             return botWorkFlow.moveMaker(dimension, history);
         }
     }
-    //get
 }
