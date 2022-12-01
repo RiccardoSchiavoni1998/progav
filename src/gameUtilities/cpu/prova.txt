@@ -1,0 +1,181 @@
+
+function matchAnalyzer(cells){
+    let allMoves = Array.from({ length: 100 }, (v, i) => v= i).filter((move)=>!cells.includes(move));
+    let outcomes=[]
+    if (cells.length > 7){
+        let range = 7;
+        outcomes = cells.map((cell)=>cell = cell.outcome).slice(cells.length-8);
+    }else{
+        let range = cells.length
+        outcomes = cells.map((cell)=>cell = cell.outcome);
+    }
+    let index = outcomes.lastIndexOf('sunk');
+    if(index !== -1){ outcomes = outcomes.slice(index) } //ora sono gli ultimi elem nel range dopo sunk
+    index = outcomes.indexOf('hit');
+    outcomes = outcomes.slice(index);
+    cells = cells.slice(cells.length-outcomes.length);
+    let hitcell = cells.filter((cell) => cell.outcome == 'hit').map((cell)=> cell = cell.cell).sort()
+    let misscell = cells.filter((cell) => cell.outcome == 'miss').map((cell)=> cell = cell.cell).sort()
+    if(hitcell.length == 1){
+        let neighbors = [moveleft(hitcell[0]), moveright(hitcell[0]), moveup(hitcell[0]), movedown(hitcell[0])].filter((elem)=> !misscell.includes(elem))
+        console.log("Un unico", neighbors)
+    }else{
+        console.log("1",hitcell)
+        let goRight = true;
+        hitcell.reduce((accumulator, currentValue, currentIndex, array) => {
+            goRight = moveright(array[currentIndex-1]) == currentValue;
+        }
+        , goRight)
+
+        let goDown = true;
+        hitcell.reduce((accumulator, currentValue, currentIndex, array) => {
+            goDown = movedown(array[currentIndex-1]) == currentValue;
+        }
+        , goDown)
+      
+        if(goRight){
+             let result = [moveleft(hitcell[0]), moveright(hitcell[hitcell.length-1])].filter((elem)=> !misscell.includes(elem)).filter((elem)=>!(checkmoveleft(elem)||checkmoveright(elem)))
+            console.log(result)
+        }
+        if(goDown){
+            let result = [moveup(hitcell[0]), movedown(hitcell[hitcell.length-1])].filter((elem)=> !misscell.includes(elem)).filter((elem)=>!(checkmoveup(elem)||checkmovedown(elem)))
+            console.log(result)
+        }
+    }
+}
+
+
+function makeMove(setMoves, cells){
+        if( cells.length == 1){
+            //prendo a caso dai vici
+        }else{
+            let moves = getNeighbors(cells[0].cell);
+            cells.reduce(
+                (accumulator, currentValue, currentIndex, array) => {
+                    if(currentValue.outcomes !== 'hit') accumulator = getNeighbors(array[currentIndex-1]).filter()
+                }
+              );
+        }
+    }
+
+
+function randomicMove(cells){
+    console.log(cells)
+}
+
+function getNeighbors(a){
+    return [moveleft(a), moveright(a), moveup(a), movedown(a)]
+}
+
+function getDirection(a, b){
+    switch (b){
+        case (moveleft(a)):{
+            return "left";}
+        case (moveright(a)):
+            return "right";
+        case (moveup(a)):
+            return "up";
+        case (movedown(a)):
+            return "down";
+        default :
+            return "";
+    }
+}
+
+
+function moveleft(number){
+    let max = 10;//radicequadrata
+    let row = Math.floor((number/10)%10);
+    let col = number%10;
+    if(col == 1){
+        return (row*10)+max-1
+    }else{
+        return (row*10)+col-1
+    }
+}
+
+function moveright(number){
+    let max = 10;//radicequadrata
+    let row = Math.floor((number/10)%10);
+    let col = number%10;
+    if(col == max){
+        return (row*10)+1
+    }else{
+        return (row*10)+col+1
+    }
+}
+
+function movedown(number){
+    let max = 10; //radice quadrata
+    let row = Math.floor((number/10)%10);
+    let col = number%10;
+    if(row<max){
+        return (row+1)*10+col
+    }else{
+        return 10+col
+    }
+}
+
+function moveup(number){
+    let max = 10; //radice quadrata
+    let row = Math.floor((number/10)%10);
+    let col = number%10;
+    if(row > 0){
+        return (row-1)*10+col
+    }else{
+        return max+col
+    }
+}
+
+
+function checkmoveleft (number){
+    console.log("left",number)
+    let row = Math.floor((number/10)%10);
+    console.log(row==10)
+    return(row==10);
+}
+
+function checkmoveright (number){
+    console.log("right", number)
+    let row = Math.floor((number/10)%10);
+    console.log(row==0);
+    return (row==0);
+}
+
+function checkmoveup (number){
+    console.log("up", number)
+    let col = number%10;
+    console.log(col==10)
+    return(col==10);
+}
+
+function checkmovedown (number){
+    console.log("down", number)
+    let row = Math.floor((number/10)%10);
+    console.log(row==1)
+    return (row==0);
+}
+let cells1 = [{'cell': 11, 'outcome':'miss'}, {'cell': 20, 'outcome':'hit'}, {'cell': 17, 'outcome':'sunk'}, {'cell': 82, 'outcome':'miss'},{'cell': 14, 'outcome':'miss'}, {'cell': 65, 'outcome':'hit'},{'cell': 66, 'outcome':'miss'}];
+let cells2 = [{'cell': 11, 'outcome':'miss'}, {'cell': 20, 'outcome':'hit'}, {'cell': 17, 'outcome':'sunk'}, {'cell': 82, 'outcome':'miss'},{'cell': 14, 'outcome':'miss'}, {'cell': 65, 'outcome':'hit'},{'cell': 66, 'outcome':'miss'},{'cell': 55, 'outcome':'hit'}];
+let cells3 = [{'cell': 11, 'outcome':'miss'}, {'cell': 20, 'outcome':'hit'}, {'cell': 17, 'outcome':'sunk'}, {'cell': 82, 'outcome':'miss'},{'cell': 14, 'outcome':'miss'}, {'cell': 85, 'outcome':'hit'},{'cell': 66, 'outcome':'miss'},{'cell': 95, 'outcome':'hit'}];
+
+//let cellplus = [{'cell': 11, 'outcome':'miss'}, {'cell': 20, 'outcome':'hit'}, {'cell': 17, 'outcome':'sunk'}, {'cell': 82, 'outcome':'miss'},{'cell': 14, 'outcome':'miss'}, {'cell': 65, 'outcome':'hit'},{'cell': 66, 'outcome':'miss'},{'cell': 64, 'outcome':'miss'}];
+
+matchAnalyzer(cells1);
+matchAnalyzer(cells2);
+matchAnalyzer(cells3);
+
+//console.log(moveright(15), moveleft(15), moveup(15), movedown(15))
+/*
+let history= [{'cell': 85, 'outcome':'hit'}, {'cell': 84, 'outcome':'hit'}, {'cell': 83, 'outcome':'hit'}];
+console.log(history.filter((cell) => cell.outcome == 'miss').map((cell)=> cell = cell.cell).sort())
+*/
+
+
+
+/**let initialValue = true;
+ array1.reduce((accumulator, currentValue, currentIndex, array) => {
+   initialValue = array[currentIndex-1]*2 == currentValue;
+ 	console.log(array[currentIndex-1]*2, currentValue, initialValue);
+ }
+   , initialValue) */

@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "8c2731d7-92d5-451c-a59e-3b8aa91b1d6d",
+		"name": "Ex U3 VS IA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23737705"
+	},
+	"item": [
+		{
+			"name": "recharge Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgzNzEsImV4cCI6MTcwMTM3NDM3MSwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJhZG1pbkBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjoxfQ.gQdfVkWvcJQ9U5uzu1e1wwloCb6YIYBcVZFqMn4qqL4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\":10,\n    \"player\":\"user3@genericmail.com\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/rechargeToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rechargeToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "u3 vs IA",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgyODIsImV4cCI6MTcwMTM3NDI4MiwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyM0BnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ovdXwJEoVJGm8a-xPgvQVQaqez15oG94FMFRqbgWdYA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"typology\": \"UvIA\",\n    \"dimension\": 10,\n    \"shipsamount\": {\n      \"cacciatorpediniere\": 4,\n      \"sottomarino\": 3,\n      \"corazzata\": 3,\n      \"portaerei\": 1\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "u3 move",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgyODIsImV4cCI6MTcwMTM3NDI4MiwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyM0BnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ovdXwJEoVJGm8a-xPgvQVQaqez15oG94FMFRqbgWdYA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"idMatch\": 1,\n    \"cell\": 66\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modifyGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modifyGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ia move",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgyODIsImV4cCI6MTcwMTM3NDI4MiwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyM0BnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ovdXwJEoVJGm8a-xPgvQVQaqez15oG94FMFRqbgWdYA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idMatch\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cpu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cpu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get match history",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgyODIsImV4cCI6MTcwMTM3NDI4MiwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyM0BnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ovdXwJEoVJGm8a-xPgvQVQaqez15oG94FMFRqbgWdYA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idMatch\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/getMatchHistory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getMatchHistory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

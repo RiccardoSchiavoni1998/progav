@@ -1,0 +1,44 @@
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4Mzc5NzEsImV4cCI6MTcwMTM3Mzk3MSwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMUBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ybMyvs_OUGz4RJ1fDXSNyI4S-wYomoL30JdcUIUVBAE
+{
+  "iss": "",
+  "iat": 1669837971,
+  "exp": 1701373971,
+  "aud": "",
+  "sub": "",
+  "email": "user1@genericmail.com",
+  "role": 0
+}
+
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgxMTcsImV4cCI6MTcwMTM3NDExNywiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMkBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.dsTlQ8lovS_KSA6dzvxzYML2Sbn_OrAr9X4LsbFqiBE
+{
+  "iss": "",
+  "iat": 1669838117,
+  "exp": 1701374117,
+  "aud": "",
+  "sub": "",
+  "email": "user2@genericmail.com",
+  "role": 0
+}
+
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgyODIsImV4cCI6MTcwMTM3NDI4MiwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyM0BnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ovdXwJEoVJGm8a-xPgvQVQaqez15oG94FMFRqbgWdYA
+{
+  "iss": "",
+  "iat": 1669838282,
+  "exp": 1701374282,
+  "aud": "",
+  "sub": "",
+  "email": "user3@genericmail.com",
+  "role": 0
+}
+
+
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgzNzEsImV4cCI6MTcwMTM3NDM3MSwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJhZG1pbkBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjoxfQ.gQdfVkWvcJQ9U5uzu1e1wwloCb6YIYBcVZFqMn4qqL4
+{
+  "iss": "",
+  "iat": 1669838371,
+  "exp": 1701374371,
+  "aud": "",
+  "sub": "",
+  "email": "admin@genericmail.com",
+  "role": 1
+}

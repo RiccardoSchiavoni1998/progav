@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "80a5360b-2283-44ae-95bb-24eff0838250",
+		"name": "Creation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23737705"
+	},
+	"item": [
+		{
+			"name": "not existing pa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4Mzc5NzEsImV4cCI6MTcwMTM3Mzk3MSwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMUBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ybMyvs_OUGz4RJ1fDXSNyI4S-wYomoL30JdcUIUVBAE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"typology\": \"UvU\",\n    \"dimension\": 10,\n    \"player\":\"user2@genericmail.com\",\n    \"shipsamount\": {\n      \"cacciatorpediniere\": 3,\n      \"sottomarino\": 2,\n      \"corazzata\": 2,\n      \"portaerei\": 1\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "not existing pb",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4Mzc5NzEsImV4cCI6MTcwMTM3Mzk3MSwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMUBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ybMyvs_OUGz4RJ1fDXSNyI4S-wYomoL30JdcUIUVBAE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"typology\": \"UvU\",\n    \"dimension\": 10,\n    \"player\":\"notuser@genericmail.com\",\n    \"shipsamount\": {\n      \"cacciatorpediniere\": 3,\n      \"sottomarino\": 2,\n      \"corazzata\": 2,\n      \"portaerei\": 1\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "extra field in body request ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4Mzc5NzEsImV4cCI6MTcwMTM3Mzk3MSwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMUBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ybMyvs_OUGz4RJ1fDXSNyI4S-wYomoL30JdcUIUVBAE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"typology\": \"UvU\",\n\"dimension\": 10,\n\"anotherfield\": \"abc\",\n\"player\":\"user2@genericmail.com\",\n\"shipsamount\": {\n    \"cacciatorpediniere\": 3,\n    \"sottomarino\": 2,\n    \"corazzata\": 2,\n    \"portaerei\": 1\n}\n} \n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "error in body request content",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4Mzc5NzEsImV4cCI6MTcwMTM3Mzk3MSwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMUBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ybMyvs_OUGz4RJ1fDXSNyI4S-wYomoL30JdcUIUVBAE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"typology\": \"UvU\",\n\"dimension\": 10,\n\"anotherfield\": \"abc\",\n\"player\":\"user2@genericmail.com\",\n\"shipsamount\": {\n    \"cacciatorpediniere\": 24,\n    \"sottomarino\": 2,\n    \"corazzata\": 2,\n    \"portaerei\": 1\n}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pa vs pa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4Mzc5NzEsImV4cCI6MTcwMTM3Mzk3MSwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMUBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ybMyvs_OUGz4RJ1fDXSNyI4S-wYomoL30JdcUIUVBAE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"typology\": \"UvU\",\n    \"dimension\": 10,\n    \"player\":\"user1@genericmail.com\",\n    \"shipsamount\": {\n      \"cacciatorpediniere\": 3,\n      \"sottomarino\": 2,\n      \"corazzata\": 2,\n      \"portaerei\": 1\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "not enough token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4Mzc5NzEsImV4cCI6MTcwMTM3Mzk3MSwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMUBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ybMyvs_OUGz4RJ1fDXSNyI4S-wYomoL30JdcUIUVBAE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"typology\": \"UvU\",\n    \"dimension\": 10,\n    \"player\": \"user1@genericmail.com\",\n    \"shipsamount\": {\n      \"cacciatorpediniere\": 3,\n      \"sottomarino\": 2,\n      \"corazzata\": 2,\n      \"portaerei\": 1\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create game u1 vs u2 ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4Mzc5NzEsImV4cCI6MTcwMTM3Mzk3MSwiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMUBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.ybMyvs_OUGz4RJ1fDXSNyI4S-wYomoL30JdcUIUVBAE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"typology\": \"UvU\",\n    \"dimension\": 10,\n    \"player\": \"user2@genericmail.com\",\n    \"shipsamount\": {\n      \"cacciatorpediniere\": 3,\n      \"sottomarino\": 2,\n      \"corazzata\": 2,\n      \"portaerei\": 1\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createGame"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "79f3d68a-5377-4cce-834a-bc1467bbba36",
+		"name": "Ex U1 VS BOT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23737705"
+	},
+	"item": [
+		{
+			"name": "create game u2 vs Bot",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgxMTcsImV4cCI6MTcwMTM3NDExNywiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMkBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.dsTlQ8lovS_KSA6dzvxzYML2Sbn_OrAr9X4LsbFqiBE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"typology\": \"UvBOT\",\n    \"dimension\": 10,\n    \"shipsamount\": {\n      \"cacciatorpediniere\": 4,\n      \"sottomarino\": 3,\n      \"corazzata\": 3,\n      \"portaerei\": 1\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cpu move",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgxMTcsImV4cCI6MTcwMTM3NDExNywiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMkBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.dsTlQ8lovS_KSA6dzvxzYML2Sbn_OrAr9X4LsbFqiBE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idMatch\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cpu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cpu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "u2 move",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgxMTcsImV4cCI6MTcwMTM3NDExNywiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMkBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.dsTlQ8lovS_KSA6dzvxzYML2Sbn_OrAr9X4LsbFqiBE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"idMatch\": 1,\n    \"cell\": 56\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modifyGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modifyGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get match info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgxMTcsImV4cCI6MTcwMTM3NDExNywiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMkBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.dsTlQ8lovS_KSA6dzvxzYML2Sbn_OrAr9X4LsbFqiBE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idMatch\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/getMatchInfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getMatchInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get match history",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgxMTcsImV4cCI6MTcwMTM3NDExNywiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMkBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.dsTlQ8lovS_KSA6dzvxzYML2Sbn_OrAr9X4LsbFqiBE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idMatch\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/getMatchHistory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getMatchHistory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Ships",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgxMTcsImV4cCI6MTcwMTM3NDExNywiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMkBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.dsTlQ8lovS_KSA6dzvxzYML2Sbn_OrAr9X4LsbFqiBE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idMatch\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/getShips",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getShips"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "stop match",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2Njk4MzgxMTcsImV4cCI6MTcwMTM3NDExNywiYXVkIjoiIiwic3ViIjoiIiwiZW1haWwiOiJ1c2VyMkBnZW5lcmljbWFpbC5jb20iLCJyb2xlIjowfQ.dsTlQ8lovS_KSA6dzvxzYML2Sbn_OrAr9X4LsbFqiBE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idMatch\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deleteGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteGame"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
