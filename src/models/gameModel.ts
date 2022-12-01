@@ -100,26 +100,5 @@ export async function modifyInfo(id:number, newInfo:string){
         {
             where: {id:id}
         }
-    ).then(result=> result!=null)
+    ).then(result=> result!=null);
 }
-/*
-*/
-
-
-  /*
-
-  // JSON_VALUE - extract a scalar value from a JSON string
-User.findAll({
-  attributes: [[ sequelize.fn('JSON_VALUE', sequelize.col('userDetails'), '$.address.Line1'), 'address line 1']]
-})
-
-// JSON_VALUE - query a scalar value from a JSON string
-User.findAll({
-  where: sequelize.where(sequelize.fn('JSON_VALUE', sequelize.col('userDetails'), '$.address.Line1'), '14, Foo Street')
-})
-
-// JSON_QUERY - extract an object or array
-User.findAll({
-  attributes: [[ sequelize.fn('JSON_QUERY', sequelize.col('userDetails'), '$.address'), 'full address']]
-})
-  */
